@@ -1,0 +1,57 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header card-header-danger">
+                        <h4 class="card-title ">Kategoriler</h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead class=" text-primary">
+                                <th>
+                                    #
+                                </th>
+                                <th>
+                                    Adı
+                                </th>
+                                <th>
+                                    Durumu
+                                </th>
+                                <th>
+
+                                </th>
+                                </thead>
+                                <tbody *ngFor="let c of category" >
+                                <tr>
+                                    <td>
+                                        {{c.id}}
+                                    </td>
+                                    <td>
+                                        {{c.name}}
+                                    </td>
+                                    <td *ngIf="c.status === true">
+                                        <button class="btn btn-success">Aktif</button>
+                                    </td>
+                                    <td *ngIf="c.status === false">
+                                        <button class="btn btn-danger">Pasif</button>
+                                    </td>
+                                    <td>
+                                        <button mat-mini-fab color="primary" class="mr-2" (click)="categoryDetail(c.id)">
+                                            <mat-icon>edit</mat-icon>
+                                        </button>
+                                        <button mat-mini-fab color="warn" (click)="delete(c)">
+                                            <mat-icon>delete</mat-icon>
+                                        </button>
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
